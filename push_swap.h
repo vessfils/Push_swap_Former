@@ -6,7 +6,7 @@
 /*   By: vess <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/01 16:24:16 by vess              #+#    #+#             */
-/*   Updated: 2022/01/02 17:40:36 by vess             ###   ########.fr       */
+/*   Updated: 2022/01/02 22:14:19 by vess             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,9 @@
 
 typedef struct s_list
 {
-	//void				*content;
-	 int			content;
-	int					flag;
-	struct s_list		*next;
+	int				content;
+	int				flag;
+	struct s_list	*next;
 }					t_list;
 
 void	ft_sa(t_list **stack_a, int flag);
@@ -37,6 +36,9 @@ void	ft_rrr(t_list **stack_a, t_list **stack_b);
 void	ft_pa(t_list **stack_a, t_list **stack_b);
 void	ft_pb(t_list **stack_a, t_list **stack_b);
 int		selection_ordered(t_list *stack_a);
+void	ft_small_sort(int ac, t_list **stack_a, t_list **stack_b);
+void	ft_push_smallest_a(t_list **stack_a, t_list **stack_b);
+int		ft_smallest_finder(t_list *stack);
 int		ft_atoi(const char *str);
 void	ft_lstadd_back(t_list **alst, t_list *new);
 int		ft_lstsize(t_list *lst);

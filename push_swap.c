@@ -6,7 +6,7 @@
 /*   By: vess <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/25 17:02:17 by vess              #+#    #+#             */
-/*   Updated: 2022/01/02 17:41:58 by vess             ###   ########.fr       */
+/*   Updated: 2022/01/02 22:11:00 by vess             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,9 @@ int	main(int ac, char **av)
 	i = 0;
 	if (stack_a == NULL || selection_ordered(stack_a) == 0)
 		return (0);
+	if (ac <= 6)
+		ft_small_sort(ac, &stack_a, &stack_b);
 	print_list(stack_a);
+	print_list(stack_b);
 	return (0);
 }
