@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vess <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/25 17:02:17 by vess              #+#    #+#             */
-/*   Updated: 2021/12/31 16:21:18 by vess             ###   ########.fr       */
+/*   Updated: 2022/01/01 18:24:03 by vess             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main ()
+int main (int ac, char **av)
 {
+
     t_list *stack_a = NULL;
 	t_list *stack_b = NULL;
     ft_lstadd_front(&stack_a, ft_lstnew("3"));
@@ -32,7 +33,7 @@ int main ()
 //	ft_rra(&stack_a, 1);
 //	ft_rrb(&stack_b, 1);
 //	ft_rrr(&stack_a, &stack_b);
-	ft_pb(&stack_a, &stack_b);
+//ft_pb(&stack_a, &stack_b);
 	 while (i < 2)
 	 {
 		i++;

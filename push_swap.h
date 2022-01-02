@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vess <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/01 16:24:16 by vess              #+#    #+#             */
+/*   Updated: 2022/01/01 16:39:48 by vess             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -7,9 +19,9 @@
 
 typedef struct s_list
 {
-	void	*content;
-	int flag;
-	struct s_list	*next;
+	void				*content;
+	int					flag;
+	struct s_list		*next;
 }					t_list;
 
 void	ft_sa(t_list **stack_a, int flag);
@@ -24,8 +36,8 @@ void	ft_rrr(t_list **stack_a, t_list **stack_b);
 void	ft_pa(t_list **stack_a, t_list **stack_b);
 void	ft_pb(t_list **stack_a, t_list **stack_b);
 void	ft_lstadd_back(t_list **alst, t_list *new);
-int	ft_lstsize(t_list *lst);
+int		ft_lstsize(t_list *lst);
 void	ft_lstadd_front(t_list **alst, t_list *new);
-t_list *ft_lstlast(t_list *lst);
-t_list *ft_lstnew(void *content);
+t_list	*ft_lstlast(t_list *lst);
+t_list	*ft_lstnew(void *content);
 #endif

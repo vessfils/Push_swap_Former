@@ -6,13 +6,13 @@
 /*   By: vess <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 23:08:35 by vess              #+#    #+#             */
-/*   Updated: 2021/12/29 23:11:59 by vess             ###   ########.fr       */
+/*   Updated: 2022/01/01 16:20:45 by vess             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_rrr(t_list **stack_a, t_list **stack_b)
+void	ft_rrr(t_list **stack_a, t_list **stack_b)
 {
 	ft_rra(stack_a, 0);
 	ft_rrb(stack_b, 0);

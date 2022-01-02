@@ -6,7 +6,7 @@
 /*   By: vess <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 20:26:44 by vess              #+#    #+#             */
-/*   Updated: 2021/12/29 23:12:53 by vess             ###   ########.fr       */
+/*   Updated: 2022/01/01 16:20:23 by vess             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_rrb(t_list **stack_b, int flag)
 {
-	t_list *front;
-	t_list *back;
-	t_list *head;
-	
+	t_list	*front;
+	t_list	*back;
+	t_list	*head;
+
 	front = *stack_b;
 	back = *stack_b;
 	head = *stack_b;

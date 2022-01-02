@@ -6,11 +6,12 @@
 /*   By: vess <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 20:40:54 by vess              #+#    #+#             */
-/*   Updated: 2021/12/28 22:02:09 by vess             ###   ########.fr       */
+/*   Updated: 2022/01/01 16:23:15 by vess             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 void	ft_ss(t_list **stack_a, t_list **stack_b)
 {
 	ft_sa(stack_a, 0);

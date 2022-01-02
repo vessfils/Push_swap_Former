@@ -6,14 +6,15 @@
 /*   By: vess <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 17:58:32 by vess              #+#    #+#             */
-/*   Updated: 2021/12/29 19:09:32 by vess             ###   ########.fr       */
+/*   Updated: 2022/01/01 16:41:26 by vess             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-t_list *ft_lstnew(void *content)
+
+t_list	*ft_lstnew(void *content)
 {
-	t_list *new;
+	t_list	*new;
 
 	new = NULL;
 	new = malloc(sizeof(t_list));
@@ -25,21 +26,21 @@ t_list *ft_lstnew(void *content)
 	return (new);
 }
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
 	if (lst == NULL)
 		return (NULL);
-	while (lst->next!= NULL)
+	while (lst->next != NULL)
 		lst = lst->next;
 	return (lst);
 }
 
-void ft_lstadd_front(t_list **alst, t_list *new)
+void	ft_lstadd_front(t_list **alst, t_list *new)
 {
 	if (*alst)
 	{
-		new->next=*alst;// adresse pointe sur alst
-		*alst = new; // new = la liste
+		new->next = *alst;
+		*alst = new;
 	}
 	else
 		*alst = new;
@@ -47,8 +48,9 @@ void ft_lstadd_front(t_list **alst, t_list *new)
 
 void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	t_list *last;
-	if (alst != NULL && *alst!= NULL)
+	t_list	*last;
+
+	if (alst != NULL && *alst != NULL)
 	{
 		last = ft_lstlast(*alst);
 		last->next = new;
@@ -56,4 +58,3 @@ void	ft_lstadd_back(t_list **alst, t_list *new)
 	else
 		*alst = new;
 }
-

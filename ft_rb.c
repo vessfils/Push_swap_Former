@@ -6,14 +6,16 @@
 /*   By: vess <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 19:57:54 by vess              #+#    #+#             */
-/*   Updated: 2021/12/29 20:09:41 by vess             ###   ########.fr       */
+/*   Updated: 2022/01/01 16:18:10 by vess             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 void	ft_rb(t_list **stack_b, int flag)
 {
-	t_list *tmp;
+	t_list	*tmp;
+
 	if (*stack_b == NULL || (*stack_b)->next == NULL)
 		return ;
 	tmp = (*stack_b)->next;

@@ -6,18 +6,20 @@
 /*   By: vess <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 22:42:39 by vess              #+#    #+#             */
-/*   Updated: 2021/12/29 19:14:04 by vess             ###   ########.fr       */
+/*   Updated: 2022/01/01 16:17:29 by vess             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 void	ft_ra(t_list **stack_a, int flag)
 {
-	t_list *tmp;
+	t_list	*tmp;
+
 	if ((*stack_a)->next == NULL || *stack_a == NULL)
 		return ;
 	tmp = (*stack_a)->next;
-	(*stack_a)->next= NULL;
+	(*stack_a)->next = NULL;
 	ft_lstadd_back(&tmp, *stack_a);
 	*stack_a = tmp;
 	if (flag == 1)
