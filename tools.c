@@ -6,13 +6,13 @@
 /*   By: vess <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 17:58:32 by vess              #+#    #+#             */
-/*   Updated: 2022/01/01 16:41:26 by vess             ###   ########.fr       */
+/*   Updated: 2022/01/02 17:30:39 by vess             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstnew(int content)
 {
 	t_list	*new;
 
@@ -57,4 +57,41 @@ void	ft_lstadd_back(t_list **alst, t_list *new)
 	}
 	else
 		*alst = new;
+}
+
+static int	ft_outvalue(int neg)
+{
+	if (neg < 0)
+		return (0);
+	else
+		return (-1);
+}
+
+int	ft_atoi(const char *str)
+{
+	int					i;
+	unsigned long long	value;
+	int					neg;
+
+	i = 0;
+	value = 0;
+	neg = 1;
+	while (str[i] && (str[i] == ' ' || str[i] == '\f' || str[i] == '\n'
+			|| str[i] == '\r' || str[i] == '\t' || str[i] == '\v'))
+		i++;
+	if (str[i] == '-')
+	{
+		neg *= -1;
+		i++;
+	}
+	else if (str[i] == '+')
+		i++;
+	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
+	{
+		if (value > value * 10 + str[i] + '0')
+			return (ft_outvalue(neg));
+		value = value * 10 + str[i] - '0';
+		i++;
+	}
+	return (neg * value);
 }
