@@ -6,7 +6,7 @@
 /*   By: vess <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 17:58:32 by vess              #+#    #+#             */
-/*   Updated: 2022/01/02 17:30:39 by vess             ###   ########.fr       */
+/*   Updated: 2022/01/08 19:15:42 by vess             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,4 +94,19 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	return (neg * value);
+}
+
+int	ft_lstsize(t_list *lst)
+{
+	size_t	i;
+
+	i = 0;
+	if (!lst)
+		return (0);
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }
