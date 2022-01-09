@@ -6,7 +6,7 @@
 /*   By: vess <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 16:01:37 by vess              #+#    #+#             */
-/*   Updated: 2022/01/08 19:06:54 by vess             ###   ########.fr       */
+/*   Updated: 2022/01/09 22:32:34 by vess             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_swap(int *a, int *b)
 {
-	int tmp_a;
+	int	tmp_a;
 
 	tmp_a = *a;
 	*a = *b;
@@ -35,7 +35,6 @@ int	ft_partition(int *a, int start, int end)
 		if (a[i] <= pivot)
 		{
 			ft_swap(&a[i], &a[partitionindex]);
-			  
 			partitionindex++;
 		}
 		i++;
@@ -52,7 +51,7 @@ void	ft_quicksort(int *a, int start, int end)
 	{
 		partitionindex = ft_partition(a, start, end);
 		ft_quicksort(a, start, partitionindex - 1);
-		ft_quicksort(a, partitionindex + 1 , end);
+		ft_quicksort(a, partitionindex + 1, end);
 	}
 }
 
@@ -73,4 +72,3 @@ int main ()
 	return (0);
 }
 */
-

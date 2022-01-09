@@ -6,7 +6,7 @@
 /*   By: vess <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 19:57:51 by vess              #+#    #+#             */
-/*   Updated: 2022/01/09 20:02:57 by vess             ###   ########.fr       */
+/*   Updated: 2022/01/09 22:28:59 by vess             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_find_max_pos(t_list *stack)
 	while (stack != NULL)
 	{
 		if (ft_biggest_finder(stack) == stack->content)
-			return (pos);	
+			return (pos);
 		stack = stack->next;
 		pos++;
 	}

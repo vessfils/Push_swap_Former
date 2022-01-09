@@ -6,7 +6,7 @@
 /*   By: vess <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/25 17:02:17 by vess              #+#    #+#             */
-/*   Updated: 2022/01/09 21:34:06 by vess             ###   ########.fr       */
+/*   Updated: 2022/01/09 22:23:04 by vess             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	main(int ac, char **av)
 		return (0);
 	if (ac == 1)
 		return (EXIT_SUCCESS);
-	n_cnt = handle_args(ac, av, &arr);
+//	n_cnt = handle_args(ac, av, &arr);
 	if (n_cnt < 0)
 		return (EXIT_FAILURE);
 	if (ac <= 6)

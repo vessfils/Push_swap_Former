@@ -6,7 +6,7 @@
 /*   By: vess <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/01 16:24:16 by vess              #+#    #+#             */
-/*   Updated: 2022/01/09 21:29:21 by vess             ###   ########.fr       */
+/*   Updated: 2022/01/09 22:29:41 by vess             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int		selection_ordered(t_list *stack_a);
 void	ft_small_sort(int ac, t_list **stack_a, t_list **stack_b);
 void	ft_push_smallest_a(t_list **stack_a, t_list **stack_b);
 int		ft_smallest_finder(t_list *stack);
-void 	ft_big_sort(t_list **stack_a, t_list **stack_b);
+void	ft_big_sort(t_list **stack_a, t_list **stack_b);
 int		ft_atoi(const char *str);
 void	ft_lstadd_back(t_list **alst, t_list *new);
 int		ft_lstsize(t_list *lst);
