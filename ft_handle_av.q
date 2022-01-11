@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_max_pos.c                                  :+:      :+:    :+:   */
+/*   ft_handle_av.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vess <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/09 19:57:51 by vess              #+#    #+#             */
-/*   Updated: 2022/01/11 21:31:23 by vess             ###   ########.fr       */
+/*   Created: 2022/01/10 23:19:49 by vess              #+#    #+#             */
+/*   Updated: 2022/01/11 00:16:49 by vess             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+//#include "push_swap.h"
 
-int	ft_find_max_pos(t_list *stack)
+static char	**ft_parse_av(int ac, char **av)
 {
-	int	pos;
-
-	pos = 0;
-	while (stack != NULL)
+	char	**nbr;
+	char	*av_str;	
+	char	*tmp;
+	int	i;
+	
+	i = 0;
+	while (++i < ac)
 	{
-		if (ft_biggest_finder(stack) == stack->content)
-			return (pos);
-		stack = stack->next;
-		pos++;
+		tmp = ft_strjoin(av_str, av[i]);
+		free(av_str);
+		av_str = tmp;
+		tmp = ft_strjoin(av_str, " ");
+		free(av_str);
+		av_str = tmp;
+
 	}
-	return (0);
+	*nbr = ft_split(av_str, ' ');
+	free(av_str);
+	return (nbr);
 }
