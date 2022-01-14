@@ -6,12 +6,12 @@
 /*   By: vess <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 23:33:17 by vess              #+#    #+#             */
-/*   Updated: 2022/01/12 23:50:46 by vess             ###   ########.fr       */
+/*   Updated: 2022/01/14 16:45:17 by vess             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+/*
 static int	ft_check_double(int ac, char**av)
 {
 	int i;
@@ -29,7 +29,7 @@ static int	ft_check_double(int ac, char**av)
 	}
 	return (0);
 }
-
+*/
 static int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
@@ -92,7 +92,7 @@ static int	check_is_int(char *s)
 	return (0);
 }
 
-int ft_check_total (int ac, char **av)
+int ft_check_total (char **av)
 {
 	int	i;
 	

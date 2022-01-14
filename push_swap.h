@@ -6,7 +6,7 @@
 /*   By: vess <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/01 16:24:16 by vess              #+#    #+#             */
-/*   Updated: 2022/01/12 23:49:05 by vess             ###   ########.fr       */
+/*   Updated: 2022/01/14 16:43:21 by vess             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ t_list	*ft_lstnew(int content);
 int		ft_lstsize(t_list *lst);
 int		ft_biggest_finder(t_list *stack);
 int		ft_find_max_pos(t_list *stack);
-int ft_check_total (int ac, char **av);
+int ft_check_total (char **av);
 char    **ft_split(char const *s, char c);
 char    *ft_strjoin(char const *s1, char const *s2);
 size_t  ft_strlen(const char *s);
