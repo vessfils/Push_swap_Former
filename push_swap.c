@@ -6,7 +6,7 @@
 /*   By: vess <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/25 17:02:17 by vess              #+#    #+#             */
-/*   Updated: 2022/01/14 17:37:11 by vess             ###   ########.fr       */
+/*   Updated: 2022/01/14 19:51:29 by vess             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*create_list(int ac, char **av, t_list **stack_a)
 	int	i;
 
 	i = ac - 1;
-	while (i > 0)
+	while (i >= 0)
 	{
 		ft_lstadd_front(stack_a, ft_lstnew(atoi(av[i])));
 		i--;
@@ -52,11 +52,10 @@ int	main(int ac, char **av)
 	arr = ft_parse_av(ac, av);
 	while (arr[i])
 	{
-	//	printf("%s\n", arr[i]);
 		cnt++;
 		i++;
 	}
-	stack_a = create_list(ac, av, &stack_a);	
+	stack_a = create_list(cnt, arr, &stack_a);	
 	i = 0;
 	if (!ft_check_total(arr))
 			write(2, "Error\n", 6);
@@ -66,11 +65,10 @@ int	main(int ac, char **av)
 		return (EXIT_SUCCESS);
 	if (ac < 0)
 		return (EXIT_FAILURE);
-	if (ac <= 6)
-		ft_small_sort(ac, &stack_a, &stack_b);
-	if (ac > 6)
+	if (cnt <= 5)
+		ft_small_sort(cnt, &stack_a, &stack_b);
+	if (cnt > 5)
 		ft_big_sort(&stack_a, &stack_b);
-	
 	print_list(stack_a);
 	print_list(stack_b);
 //	if (selection_ordered(stack_a) == 0) ;
@@ -78,6 +76,6 @@ int	main(int ac, char **av)
 //	printf("%d\n", ft_biggest_finder(stack_a));
 //	printf("%d\n", ft_find_max_pos(stack_a));
 //	printf("%d\n", ft_lstsize(stack_a));
-//	*/
+
 	return (0);
 }

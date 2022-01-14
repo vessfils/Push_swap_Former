@@ -6,7 +6,7 @@
 /*   By: vess <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/02 18:44:25 by vess              #+#    #+#             */
-/*   Updated: 2022/01/14 16:56:17 by vess             ###   ########.fr       */
+/*   Updated: 2022/01/14 19:35:54 by vess             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,15 +57,15 @@ void	ft_sort_five(t_list **stack_a, t_list **stack_b)
 
 void	ft_small_sort(int ac, t_list **stack_a, t_list **stack_b)
 {
-	if (ac == 3)
+	if (ac == 2)
 	{
 		if ((*stack_a)->content > (*stack_a)->next->content)
 			ft_sa(stack_a, 1);
 	}
-	else if (ac == 4)
+	else if (ac == 3)
 		ft_sort_three(stack_a);
-	else if (ac == 5)
+	else if (ac == 4)
 		ft_sort_four(stack_a, stack_b);
-	else if (ac == 6)
+	else if (ac == 5)
 		ft_sort_five(stack_a, stack_b);
 }
