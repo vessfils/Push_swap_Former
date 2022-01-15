@@ -6,7 +6,7 @@
 /*   By: vess <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 19:11:44 by vess              #+#    #+#             */
-/*   Updated: 2022/01/09 22:21:28 by vess             ###   ########.fr       */
+/*   Updated: 2022/01/15 14:22:21 by jcampagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ void	ft_big_sort(t_list **stack_a, t_list **stack_b)
 	int	chunk_size;
 
 	chunk_size = ft_lstsize(*stack_a) / 12 + 22;
+	//chunk_size = ft_lstsize(*stack_a) / 4;
 	ft_push_in_chunk(stack_a, stack_b, chunk_size);
 	ft_push_back_in_order(stack_a, stack_b);
 }

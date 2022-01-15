@@ -6,13 +6,13 @@
 /*   By: vess <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 23:33:17 by vess              #+#    #+#             */
-/*   Updated: 2022/01/14 16:45:17 by vess             ###   ########.fr       */
+/*   Updated: 2022/01/15 14:10:12 by jcampagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-/*
-static int	ft_check_double(int ac, char**av)
+
+ int	ft_check_double(int ac, char**av)
 {
 	int i;
 	int	j;
@@ -29,7 +29,7 @@ static int	ft_check_double(int ac, char**av)
 	}
 	return (0);
 }
-*/
+
 static int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
@@ -38,65 +38,77 @@ static int	ft_isdigit(int c)
 		return (0);
 }
 
-static int ft_check_nb_valid (char **av)
+int ft_check_nb_valid (char **av)
 {
 	int	i;
-
+	int	j;
 	i = -1;
 	while (av[++i])
 	{
-		if(!ft_isdigit(atoi(av[i])))
+		j = -1;
+		if (av[i][0] == '-' || av[i][0] == '+')
+			j++;
+		if(!ft_isdigit(av[i][j + 1]))
 			return (1);
+		while (av[i][++j])
+		{
+			if(!ft_isdigit(av[i][j]))
+				return (1);
+		}
 	}
 	return (0);
 }
 
-int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
+long	ft_atole(const char *str)
 {
-	unsigned int	i;
+	int					i;
+	unsigned  long long	value;
+	int	 neg;
 
 	i = 0;
-	while (i < n && (s1[i] || s2[i]))
+	value = 0;
+	neg = 1;
+	while (str[i] && (str[i] == ' ' || str[i] == '\f' || str[i] == '\n'
+			|| str[i] == '\r' || str[i] == '\t' || str[i] == '\v'))
+		i++;
+	if (str[i] == '-')
 	{
-		if (s1[i] != s2[i])
-			return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
+		neg *= -1;
 		i++;
 	}
-	return (0);
+	else if (str[i] == '+')
+		i++;
+	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
+	{
+		value = value * 10 + str[i] - '0';
+		i++;
+	}
+	return (neg * value);
 }
-static int	check_is_int(char *s)
+
+
+ int	check_is_int(char *s)
 {
 	int		len;
-	short	is_neg;
-	short	sign;
-
-	sign = 0;
-	is_neg = 0;
+	long nb;
 	len = ft_strlen(s);
-	if (*s == '-' && ++is_neg && ++sign && s++)
-		len--;
-	else if (*s == '+' && ++sign && s++)
-		len--;
-	while (*s == '0' && *s && len--)
-		s++;
-	if (len > 10)
+	if (len > 11)
 		return (1);
-	else if (len < 10)
+	nb = ft_atole(s);
+	if  (len < 10)
 		return (0);
-	if (!sign && !is_neg && ft_strncmp(s, "2147483648", 10) >= 0)
-		return (1);
-	else if (sign && !is_neg && ft_strncmp(s, "2147483648", 10) >= 0)
-		return (1);
-	else if (sign && is_neg && ft_strncmp(s, "2147483649", 10) >= 0)
+	if ((nb  > 2147483647) || nb < -2147483648)
 		return (1);
 	return (0);
 }
 
-int ft_check_total (char **av)
+int ft_check_total (int ac, char **av)
 {
 	int	i;
 	
 	if (ft_check_nb_valid(av))
+		return (1);
+	if (ft_check_double(ac, av))
 		return (1);
 	i = -1;
 	while (av[++i])
@@ -106,3 +118,4 @@ int ft_check_total (char **av)
 	}
 	return (0);
 }
+

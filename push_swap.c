@@ -6,7 +6,7 @@
 /*   By: vess <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/25 17:02:17 by vess              #+#    #+#             */
-/*   Updated: 2022/01/14 19:51:29 by vess             ###   ########.fr       */
+/*   Updated: 2022/01/15 14:36:38 by jcampagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,22 +55,22 @@ int	main(int ac, char **av)
 		cnt++;
 		i++;
 	}
-	stack_a = create_list(cnt, arr, &stack_a);	
 	i = 0;
-	if (!ft_check_total(arr))
-			write(2, "Error\n", 6);
-	if (stack_a == NULL || selection_ordered(stack_a) == 0)
-		return (0);
+	if (ft_check_total(cnt, arr))
+		return (write(2, "Error\n", 6));
 	if (ac == 1)
 		return (EXIT_SUCCESS);
 	if (ac < 0)
 		return (EXIT_FAILURE);
+	stack_a = create_list(cnt, arr, &stack_a);	
+	if (stack_a == NULL || selection_ordered(stack_a) == 0)
+		return (0);
 	if (cnt <= 5)
 		ft_small_sort(cnt, &stack_a, &stack_b);
 	if (cnt > 5)
 		ft_big_sort(&stack_a, &stack_b);
-	print_list(stack_a);
-	print_list(stack_b);
+//	print_list(stack_a);
+//	print_list(stack_b);
 //	if (selection_ordered(stack_a) == 0) ;
 //		printf("Succes!!!!");
 //	printf("%d\n", ft_biggest_finder(stack_a));
